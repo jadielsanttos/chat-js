@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&family=Quicksand:wght@500&family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.container .area_chat {
+    height: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+}
+
+.container .area_chat .area_header {
+    background-color: #fff;
+    color: #000;
+    border-bottom: 1px solid #ccc;
+}
+
+.container .area_chat .area_header .area_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .area_chat .area_header .area_title .active {
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+    background-color: red;
+    margin-left: 10px;
+}
+
+.container .area_chat .area_msg {
+    padding: 10px;
+}
+
+.container .area_chat .area_msg .area_padrao  {
+    color: #000;
+    font-size: 18px;
+}
+
+.container .area_chat .area_msg .area_padrao .client_msg p {
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.container .area_chat .area_msg .area_padrao .item_msg_auto,
+.container .area_chat .area_msg .area_padrao .item_padrao {
+    display: flex;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.container .area_chat .area_msg .area_padrao .item_msg_auto p,
+.container .area_chat .area_msg .area_padrao .item_padrao p {
+    background-color: #fff; 
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.container .area_chat .area_msg .area_padrao,
+.container .area_chat .area_msg .cardapio,
+.container .area_chat .area_msg .cardapio .cardapio_item_opcao,
+.container .area_chat .area_msg .reserva {
+    display: none;
+}
+
+.container .area_chat .area_msg .cardapio .cardapio_item,
+.container .area_chat .area_msg .cardapio .voltar,
+.container .area_chat .area_msg .cardapio .cardapio_item_option,
+.container .area_chat .area_msg .reserva .reserva_item,
+.container .area_chat .area_msg .reserva .reservado_com_sucesso,
+.container .area_chat .area_msg .reserva .voltar {
+    display: flex;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.container .area_chat .area_msg .cardapio .cardapio_item p,
+.container .area_chat .area_msg .cardapio .voltar p,
+.container .area_chat .area_msg .cardapio .cardapio_item_option p,
+.container .area_chat .area_msg .reserva .reserva_item p,
+.container .area_chat .area_msg .reserva .reservado_com_sucesso p,
+.container .area_chat .area_msg .reserva .voltar p {
+    background-color: #fff;
+    color: #000;
+    padding: 5px 10px;
+    /* margin: 10px 0; */
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.container .area_chat .area_msg .cardapio .client_msg, 
+.container .area_chat .area_msg .area_padrao .client_msg,
+.container .area_chat .area_msg .reserva .client_msg {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.container .area_chat .area_msg .cardapio .client_msg p, 
+.container .area_chat .area_msg .reserva .client_msg p {
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.container .area_chat .area_msg .reserva .reservado_com_sucesso p i {
+    background-color: green;
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.container .area_chat .btn_send_msg {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 10px;
+    height: 40px;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+
+.container .area_chat .btn_send_msg input {
+    padding: 10px 15px;
+    height: 100%;
+    width: calc(100% - 70px);
+    border-radius: 50px;
+    outline: 0;
+    border: 1px solid #ccc;
+    font-size: 18px;
+}
+
+.container .area_chat .btn_send_msg button {
+    background-color: #fff;
+    cursor: pointer;
+    height: 100%;
+    width: 65px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+}
+
+.container .area_chat .area_loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .area_chat .area_loading .loader {
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border: 6px solid #fff;
+    border-top-color: #555;
+    border-radius: 50%;
+    animation: is-rotating 1s infinite;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}

@@ -2,7 +2,7 @@ let time = new Date();
 let hora = time.getHours();
 let minutos = time.getMinutes();
 let segundos = time.getSeconds();
-let horaTotal = `${hora}:${minutos}:${segundos}`;
+let horaTotal = `${hora}:${minutos}`;
 
 const menu = [
     {
@@ -84,6 +84,7 @@ function sendMsg() {
 
     }else {
         let html = `
+            <div class="item_hora"><span>${horaTotal.toLocaleString('pt-BR', {timezone: 'UTC'})}</span></div>
             <div class="client_msg"><p>${input}</p></div>
             <div class="item_msg_auto"><p>Olá, ${hora >= 5 && hora <= 12 ?'Bom dia' : hora > 12 && hora <= 18 ?'Boa tarde' : 'Boa noite'}, o que você deseja?</p></div>
             <div class="item_padrao"><p>${menu[0].opção}</p></div>
@@ -99,6 +100,7 @@ function sendMsg() {
 
         if(input === 'Cardápio') {
             document.querySelector('.cardapio').innerHTML = `
+                <div class="item_hora"><span>${horaTotal.toLocaleString('pt-BR', {timezone: 'UTC'})}</span></div>
                 <div class="client_msg"><p>${input}</p></div>
                 <div class="cardapio_item"><p>${menu[0].opções[0]}</p></div>
                 <div class="cardapio_item"><p>${menu[0].opções[1]}</p></div>
@@ -113,6 +115,7 @@ function sendMsg() {
 
         }else if(input === 'Reservar uma mesa') {
             document.querySelector('.reserva').innerHTML = `
+                <div class="item_hora"><span>${horaTotal.toLocaleString('pt-BR', {timezone: 'UTC'})}</span></div>
                 <div class="client_msg"><p>${input}</p></div>
                 <div class="reserva_item"><p>${menu[1].opções[0]}</p></div>
                 <div class="reserva_item"><p>${menu[1].opções[1]}</p></div>
@@ -139,6 +142,7 @@ function sendMsg() {
         if(input === 'Pizza') {
             areaPadrao.style.display = 'none';
             document.querySelector('.cardapio').innerHTML = `
+                <div class="item_hora"><span>${horaTotal.toLocaleString('pt-BR', {timezone: 'UTC'})}</span></div>
                 <div class="client_msg"><p>${input}</p></div>
                 <div class="cardapio_item_option"><p>${cardapio[0].opções[0]}</p></div>
                 <div class="cardapio_item_option"><p>${cardapio[0].opções[1]}</p></div>
@@ -152,6 +156,7 @@ function sendMsg() {
         }else if(input === 'Hamburguer') {
             areaPadrao.style.display = 'none';
             document.querySelector('.cardapio').innerHTML = `
+                <div class="item_hora"><span>${horaTotal.toLocaleString('pt-BR', {timezone: 'UTC'})}</span></div>
                 <div class="client_msg"><p>${input}</p></div>
                 <div class="cardapio_item_option"><p>${cardapio[1].opções[0]}</p></div>
                 <div class="cardapio_item_option"><p>${cardapio[1].opções[1]}</p></div>
@@ -165,6 +170,7 @@ function sendMsg() {
         }else if(input === 'Pastel') {
             areaPadrao.style.display = 'none';
             document.querySelector('.cardapio').innerHTML = `
+                <div class="item_hora"><span>${horaTotal.toLocaleString('pt-BR', {timezone: 'UTC'})}</span></div>
                 <div class="client_msg"><p>${input}</p></div>
                 <div class="cardapio_item_option"><p>${cardapio[2].opções[0]}</p></div>
                 <div class="cardapio_item_option"><p>${cardapio[2].opções[1]}</p></div>
@@ -185,6 +191,7 @@ function sendMsg() {
         if(input === 'Mesa para 2') {
             areaPadrao.style.display = 'none';
             document.querySelector('.reserva').innerHTML = `
+                <div class="item_hora"><span>${horaTotal.toLocaleString('pt-BR', {timezone: 'UTC'})}</span></div>
                 <div class="client_msg"><p>${input}</p></div>
                 <div class="reservado_com_sucesso"><p>${input} reservada com sucesso! <i class="fa-solid fa-check"></i></p></div>
                 <div class="reserva_item voltar"><p> 1 - Finalizar atendimento</p></div>
@@ -192,6 +199,7 @@ function sendMsg() {
         }else if(input === 'Mesa para 3') {
             areaPadrao.style.display = 'none';
             document.querySelector('.reserva').innerHTML = `
+                <div class="item_hora"><span>${horaTotal.toLocaleString('pt-BR', {timezone: 'UTC'})}</span></div>
                 <div class="client_msg"><p>${input}</p></div>
                 <div class="reservado_com_sucesso"><p>${input} reservada com sucesso! <i class="fa-solid fa-check"></i></p></div>
                 <div class="reserva_item voltar"><p> 1 - Finalizar atendimento</p></div>
@@ -199,6 +207,7 @@ function sendMsg() {
         }else if(input === 'Mesa para 4') {
             areaPadrao.style.display = 'none';
             document.querySelector('.reserva').innerHTML = `
+                <div class="item_hora"><span>${horaTotal.toLocaleString('pt-BR', {timezone: 'UTC'})}</span></div>
                 <div class="client_msg"><p>${input}</p></div>
                 <div class="reservado_com_sucesso"><p>${input} reservada com sucesso! <i class="fa-solid fa-check"></i></p></div>
                 <div class="reserva_item voltar"><p> 1 - Finalizar atendimento</p></div>

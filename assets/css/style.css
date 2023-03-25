@@ -13,15 +13,32 @@ html, body {
 }
 
 .container {
+    display: flex;
     width: 100%;
     height: 100%;
 }
 
 .container .area_chat {
     height: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    width: 50%;
     border: 1px solid #ccc;
+}
+
+.container .area_right_side {
+    width: 50%;
+    background-image: url('../images/imagem-trabalho.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.container .area_right_side .shadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0,0,0,0.3);
 }
 
 .container .area_chat .area_header {
@@ -44,10 +61,22 @@ html, body {
     margin-left: 10px;
 }
 
+.container .area_chat .single {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #ddd;
+    background-color: #fff;
+}
+
 .container .area_chat .area_msg {
     padding: 10px;
-    max-width: 600px;
-    margin: 0 auto;
+    width: inherit;
     position: fixed;
     left: 0;
     right: 0;
@@ -56,7 +85,7 @@ html, body {
 
 .container .area_chat .area_msg .item_hora {
     text-align: center;
-    color: #fff;
+    color: #888;
     font-size: 15px;
 }
 
@@ -144,9 +173,7 @@ html, body {
 }
 
 .container .area_chat .btn_send_msg {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    width: inherit;
     padding: 0 10px;
     height: 40px;
     position: fixed;
@@ -178,8 +205,8 @@ html, body {
 .container .area_chat .area_loading {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 25%;
+    transform: translate(-50%, -25%);
 }
 
 .container .area_chat .area_loading .loader {
@@ -195,5 +222,20 @@ html, body {
 @keyframes is-rotating {
     to {
         transform: rotate(1turn);
+    }
+}
+
+@media (max-width: 600px) {
+    .container .area_chat {
+        width: 100%;
+    }
+    .container .area_right_side {
+        width: 0;
+        display: none;
+    }
+    .container .area_chat .area_loading {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }

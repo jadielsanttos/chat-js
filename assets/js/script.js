@@ -60,7 +60,7 @@ document.querySelector('.btn_send').addEventListener('click', sendMsg);
 document.querySelector('input').addEventListener('keyup', keyUp);
 
 function verificaHora() {
-    if(horaTotal >= 5 && horaTotal <= 18) {
+    if(horaTotal >= '05:00' || horaTotal <= '18:00') {
         document.querySelector('.area_chat').style.backgroundColor = '#eee';
     }else {
         document.querySelector('.area_chat').style.backgroundColor = '#222';
@@ -87,7 +87,7 @@ function sendMsg() {
         let html = `
             <div class="item_hora"><span>${horaTotal.toLocaleString('pt-BR', {timezone: 'UTC'})}</span></div>
             <div class="client_msg"><p>${input}</p></div>
-            <div class="item_msg_auto"><p>Olá, ${horaTotal >= 5 && horaTotal <= 12 ?'Bom dia' : horaTotal > 12 && horaTotal <= 18 ?'Boa tarde' : 'Boa noite'}, o que você deseja?</p></div>
+            <div class="item_msg_auto"><p>Olá, ${horaTotal >= '5:00' || horaTotal <= '12:00' ? 'Bom dia' : horaTotal > '12:00' || horaTotal <= '18:00' ? 'Boa tarde' : 'Boa noite'}, o que você deseja?</p></div>
             <div class="item_padrao"><p>${menu[0].opção}</p></div>
             <div class="item_padrao"><p>${menu[1].opção}</p></div>                               
         `;
